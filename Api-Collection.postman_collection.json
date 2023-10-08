@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "d7e74767-468c-41f0-a9af-9bfd1ad97d51",
+		"name": "Api-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30186715"
+	},
+	"item": [
+		{
+			"name": "resgister-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"first_name\":\"Nischal\",\r\n            \"last_name\":\"Bainsla\",\r\n            \"email\":\"nischalbainsla21@gmail.com\",\r\n            \"password\":\"Nischal@123\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add-template",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTY2NjM4MTcsInN1YiI6Im5pc2NoYWxiYWluc2xhMjFAZ21haWwuY29tIn0.QL0gBAnCx1RMFpK-6PuLLTEiBnBAk5Ejl6EgEH3EUwE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"template_name\":\"Template-1\",\r\n            \"subject\":\"test subject 1\",\r\n            \"body\":\"Hi this is test template body 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/template",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-template",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update-template",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTY2NjM4MTcsInN1YiI6Im5pc2NoYWxiYWluc2xhMjFAZ21haWwuY29tIn0.QL0gBAnCx1RMFpK-6PuLLTEiBnBAk5Ejl6EgEH3EUwE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/template/?template_id=d5427abbe4a040928586de99307c8962",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"template",
+						""
+					],
+					"query": [
+						{
+							"key": "template_id",
+							"value": "d5427abbe4a040928586de99307c8962"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-template",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTY2NjM4MTcsInN1YiI6Im5pc2NoYWxiYWluc2xhMjFAZ21haWwuY29tIn0.QL0gBAnCx1RMFpK-6PuLLTEiBnBAk5Ejl6EgEH3EUwE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\r\n            \"body\": \"Hi this is updated test template body 1\",\r\n            \"subject\": \"test updated subject 1\",\r\n            \"template_name\": \"Template-1\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/template/?template_id=d5427abbe4a040928586de99307c8962",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"template",
+						""
+					],
+					"query": [
+						{
+							"key": "template_id",
+							"value": "d5427abbe4a040928586de99307c8962"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-template",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTY2NjM4MTcsInN1YiI6Im5pc2NoYWxiYWluc2xhMjFAZ21haWwuY29tIn0.QL0gBAnCx1RMFpK-6PuLLTEiBnBAk5Ejl6EgEH3EUwE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/template/?template_id=d5427abbe4a040928586de99307c8962",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"template",
+						""
+					],
+					"query": [
+						{
+							"key": "template_id",
+							"value": "d5427abbe4a040928586de99307c8962"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
