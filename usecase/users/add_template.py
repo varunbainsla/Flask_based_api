@@ -15,7 +15,6 @@ def AddTemplateUsecase():
                 subject=request.json["subject"],
                 body=request.json["body"]
         )
-    print(payload)
     with MongoClient(
         f"mongodb+srv://{DATABASE_USER}:{DATABASE_PASSWORD}@cluster0.4etijnx.mongodb.net/?retryWrites=true&w=majority"
     ) as client:
@@ -25,8 +24,7 @@ def AddTemplateUsecase():
             data = repo.add_template(payload)
             return {
                 "status":200,
-                "message": "Template Added Successfully",
-                "data" : data
+                "message": "Template Added Successfully"
             }
 
         except:
